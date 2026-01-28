@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="005-add-indexes" author="demo">
+        <!-- Books indexes -->
+        <createIndex indexName="idx_books_isbn" tableName="books">
+            <column name="isbn"/>
+        </createIndex>
+
+        <createIndex indexName="idx_books_title" tableName="books">
+            <column name="title"/>
+        </createIndex>
+
+        <!-- Customers indexes -->
+        <createIndex indexName="idx_customers_email" tableName="customers">
+            <column name="email"/>
+        </createIndex>
+
+        <!-- Orders indexes -->
+        <createIndex indexName="idx_orders_customer" tableName="orders">
+            <column name="customer_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_orders_status" tableName="orders">
+            <column name="status"/>
+        </createIndex>
+
+        <createIndex indexName="idx_orders_date" tableName="orders">
+            <column name="order_date"/>
+        </createIndex>
+
+        <!-- Order Items indexes -->
+        <createIndex indexName="idx_order_items_order" tableName="order_items">
+            <column name="order_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_order_items_book" tableName="order_items">
+            <column name="book_id"/>
+        </createIndex>
+
+        <rollback>
+            <dropIndex indexName="idx_books_isbn" tableName="books"/>
+            <dropIndex indexName="idx_books_title" tableName="books"/>
+            <dropIndex indexName="idx_customers_email" tableName="customers"/>
+            <dropIndex indexName="idx_orders_customer" tableName="orders"/>
+            <dropIndex indexName="idx_orders_status" tableName="orders"/>
+            <dropIndex indexName="idx_orders_date" tableName="orders"/>
+            <dropIndex indexName="idx_order_items_order" tableName="order_items"/>
+            <dropIndex indexName="idx_order_items_book" tableName="order_items"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

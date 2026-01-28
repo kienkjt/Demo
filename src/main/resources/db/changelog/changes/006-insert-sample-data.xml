@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="006-insert-sample-data" author="demo">
+        <!-- Insert Books -->
+        <insert tableName="books">
+            <column name="title" value="Clean Code"/>
+            <column name="author" value="Robert C. Martin"/>
+            <column name="isbn" value="978-0132350884"/>
+            <column name="price" value="450000"/>
+            <column name="stock_quantity" value="100"/>
+        </insert>
+
+        <insert tableName="books">
+            <column name="title" value="Design Patterns"/>
+            <column name="author" value="Gang of Four"/>
+            <column name="isbn" value="978-0201633610"/>
+            <column name="price" value="550000"/>
+            <column name="stock_quantity" value="50"/>
+        </insert>
+
+        <insert tableName="books">
+            <column name="title" value="Refactoring"/>
+            <column name="author" value="Martin Fowler"/>
+            <column name="isbn" value="978-0201485677"/>
+            <column name="price" value="480000"/>
+            <column name="stock_quantity" value="75"/>
+        </insert>
+
+        <insert tableName="books">
+            <column name="title" value="The Pragmatic Programmer"/>
+            <column name="author" value="Andrew Hunt"/>
+            <column name="isbn" value="978-0135957059"/>
+            <column name="price" value="520000"/>
+            <column name="stock_quantity" value="60"/>
+        </insert>
+
+        <insert tableName="books">
+            <column name="title" value="Effective Java"/>
+            <column name="author" value="Joshua Bloch"/>
+            <column name="isbn" value="978-0134685991"/>
+            <column name="price" value="490000"/>
+            <column name="stock_quantity" value="80"/>
+        </insert>
+
+        <!-- Insert Customers -->
+        <insert tableName="customers">
+            <column name="name" value="Nguyen Van A"/>
+            <column name="email" value="nguyenvana@example.com"/>
+            <column name="phone" value="0901234567"/>
+            <column name="address" value="123 Le Loi, Hanoi"/>
+        </insert>
+
+        <insert tableName="customers">
+            <column name="name" value="Tran Thi B"/>
+            <column name="email" value="tranthib@example.com"/>
+            <column name="phone" value="0902345678"/>
+            <column name="address" value="456 Nguyen Hue, Ho Chi Minh"/>
+        </insert>
+
+        <insert tableName="customers">
+            <column name="name" value="Le Van C"/>
+            <column name="email" value="levanc@example.com"/>
+            <column name="phone" value="0903456789"/>
+            <column name="address" value="789 Tran Phu, Da Nang"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="customers"/>
+            <delete tableName="books"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
