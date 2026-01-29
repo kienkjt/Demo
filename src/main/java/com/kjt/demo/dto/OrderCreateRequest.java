@@ -12,10 +12,11 @@ import java.util.List;
 @Setter
 public class OrderCreateRequest {
 
-    @NotNull(message = "{validation.order.customer.required}")
+    @NotNull(message = "validation.order.customer.required")
     private Long customerId;
 
-    @NotEmpty(message = "{validation.order.items.required}")
+    @NotEmpty(message = "validation.order.items.required")
+    @NotNull(message = "validation.order.items.empty")
     @Valid
     private List<OrderItemRequest> items;
 }

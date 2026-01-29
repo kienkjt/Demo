@@ -23,7 +23,7 @@ public class BookCreateRequest {
     private String isbn;
 
     @NotNull(message = "validation.book.price.required")
-    @Min(value = 0, message = "{validation.book.price.min}")
+    @Min(value = 0, message = "validation.book.price.min")
     private Double price;
 
     @Min(value = 0, message = "validation.book.stock.min")

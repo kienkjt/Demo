@@ -33,7 +33,7 @@ public class Order {
     @Size(max = 50)
     @NotNull
     @Column(name = "status", nullable = false, length = 50)
-    private String status;
+    private OrderStatus status;
 
     @NotNull
     @Column(name = "total_amount", nullable = false, precision = 10, scale = 2)
