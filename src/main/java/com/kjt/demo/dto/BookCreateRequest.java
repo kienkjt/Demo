@@ -8,6 +8,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 public class BookCreateRequest {
@@ -24,7 +26,7 @@ public class BookCreateRequest {
 
     @NotNull(message = "validation.book.price.required")
     @Min(value = 0, message = "validation.book.price.min")
-    private Double price;
+    private BigDecimal price;
 
     @Min(value = 0, message = "validation.book.stock.min")
     private Integer stockQuantity;

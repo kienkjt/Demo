@@ -1,9 +1,9 @@
 package com.kjt.demo.repository;
 
-import com.kjt.demo.entity.Book;
+import com.kjt.demo.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookRepository extends JpaRepository<Book, Long> {
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
 }

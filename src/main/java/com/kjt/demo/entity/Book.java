@@ -37,7 +37,7 @@ public class Book {
 
     @NotNull
     @Column(name = "price", nullable = false, precision = 10, scale = 2)
-    private Double price;
+    private BigDecimal  price;
 
     @NotNull
     @ColumnDefault("0")
